@@ -27,6 +27,7 @@ public class LandingPage extends javax.swing.JFrame {
     private void initComponents() {
 
         btnTambahBuku = new javax.swing.JButton();
+        btnListBuku = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -37,13 +38,22 @@ public class LandingPage extends javax.swing.JFrame {
             }
         });
 
+        btnListBuku.setText("List Buku");
+        btnListBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListBukuActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(313, 313, 313)
-                .addComponent(btnTambahBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnTambahBuku, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                    .addComponent(btnListBuku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(310, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -51,7 +61,9 @@ public class LandingPage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(260, 260, 260)
                 .addComponent(btnTambahBuku)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnListBuku)
+                .addContainerGap(225, Short.MAX_VALUE))
         );
 
         pack();
@@ -61,9 +73,16 @@ public class LandingPage extends javax.swing.JFrame {
     private void btnTambahBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahBukuActionPerformed
         this.setVisible(false);
         
-        FormBuku form = new FormBuku();
+        FormEntryBuku form = new FormEntryBuku(true);
         form.setVisible(true);
     }//GEN-LAST:event_btnTambahBukuActionPerformed
+
+    private void btnListBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListBukuActionPerformed
+        this.setVisible(false);
+        
+        FormListBuku form = new FormListBuku();
+        form.setVisible(true);
+    }//GEN-LAST:event_btnListBukuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,6 +120,7 @@ public class LandingPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnListBuku;
     private javax.swing.JButton btnTambahBuku;
     // End of variables declaration//GEN-END:variables
 }

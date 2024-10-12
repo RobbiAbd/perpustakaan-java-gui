@@ -25,61 +25,60 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnBack" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel3" min="-2" pref="89" max="-2" attributes="0"/>
+                                  <EmptySpace min="85" pref="85" max="-2" attributes="0"/>
+                                  <Component id="comboJenisBuku" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel3" min="-2" pref="89" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" min="-2" pref="89" max="-2" attributes="0"/>
                                           <EmptySpace min="85" pref="85" max="-2" attributes="0"/>
-                                          <Component id="comboJenisBuku" max="32767" attributes="0"/>
+                                          <Component id="txtJudul" min="-2" pref="355" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jLabel2" min="-2" pref="89" max="-2" attributes="0"/>
-                                                  <EmptySpace min="85" pref="85" max="-2" attributes="0"/>
-                                                  <Component id="txtJudul" min="-2" pref="355" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jLabel4" min="-2" pref="89" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                                                  <Component id="txtTahunTerbit" min="-2" pref="355" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jLabel6" min="-2" pref="89" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                                                  <Component id="txtPenulis" min="-2" pref="355" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jLabel5" min="-2" pref="89" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                                                  <Component id="txtHargaSewa" min="-2" pref="355" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="btnSubmit" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="labelSubmit" alignment="1" min="-2" pref="521" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jLabel4" min="-2" pref="89" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                          <Component id="txtTahunTerbit" min="-2" pref="355" max="-2" attributes="0"/>
                                       </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel1" min="-2" pref="89" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                                      <Component id="txtIsbn" min="-2" pref="355" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel6" min="-2" pref="89" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                          <Component id="txtPenulis" min="-2" pref="355" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel5" min="-2" pref="89" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                          <Component id="txtHargaSewa" min="-2" pref="355" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="btnSubmit" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelSubmit" alignment="1" min="-2" pref="521" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel1" min="-2" pref="89" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="txtIsbn" min="-2" pref="355" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="0" pref="193" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jPanel1" alignment="1" pref="744" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace pref="199" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" pref="738" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -159,10 +158,11 @@
     <Component class="javax.swing.JComboBox" name="comboJenisBuku">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Komik"/>
-            <StringItem index="1" value="Manga"/>
-            <StringItem index="2" value="Novel"/>
+          <StringArray count="4">
+            <StringItem index="0" value="== PILIH =="/>
+            <StringItem index="1" value="Komik"/>
+            <StringItem index="2" value="Manga"/>
+            <StringItem index="3" value="Novel"/>
           </StringArray>
         </Property>
       </Properties>

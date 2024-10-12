@@ -4,5 +4,6 @@
 /home/robbi/Projects/Personal/java/perpustakaan-java-gui/src/main/java/com/company/perpustakaan/java/model/Buku.java
 /home/robbi/Projects/Personal/java/perpustakaan-java-gui/src/main/java/com/company/perpustakaan/java/model/Pengguna.java
 /home/robbi/Projects/Personal/java/perpustakaan-java-gui/src/main/java/com/company/perpustakaan/java/model/Pustakawan.java
-/home/robbi/Projects/Personal/java/perpustakaan-java-gui/src/main/java/com/company/perpustakaan/java/view/FormBuku.java
+/home/robbi/Projects/Personal/java/perpustakaan-java-gui/src/main/java/com/company/perpustakaan/java/view/FormEntryBuku.java
+/home/robbi/Projects/Personal/java/perpustakaan-java-gui/src/main/java/com/company/perpustakaan/java/view/FormListBuku.java
 /home/robbi/Projects/Personal/java/perpustakaan-java-gui/src/main/java/com/company/perpustakaan/java/view/LandingPage.java
