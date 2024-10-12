@@ -36,7 +36,19 @@ public class FormBuku extends javax.swing.JFrame {
         comboJenisBuku = new javax.swing.JComboBox<>();
         btnSubmit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txtTahunTerbit = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtHargaSewa = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtPenulis = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         labelValidIsbn = new javax.swing.JLabel();
+        labelValidationJudul = new javax.swing.JLabel();
+        labelTahunTerbit = new javax.swing.JLabel();
+        labelPenulis = new javax.swing.JLabel();
+        labelHargaSewa = new javax.swing.JLabel();
+        labelSubmit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,6 +61,12 @@ public class FormBuku extends javax.swing.JFrame {
         });
 
         jLabel2.setText("Judul");
+
+        txtJudul.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtJudulKeyReleased(evt);
+            }
+        });
 
         jLabel3.setText("Jenis Buku");
 
@@ -68,6 +86,72 @@ public class FormBuku extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Tahun Terbit");
+
+        txtTahunTerbit.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTahunTerbitKeyReleased(evt);
+            }
+        });
+
+        jLabel5.setText("Harga Sewa");
+
+        txtHargaSewa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtHargaSewaKeyReleased(evt);
+            }
+        });
+
+        jLabel6.setText("Penulis");
+
+        txtPenulis.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPenulisKeyReleased(evt);
+            }
+        });
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        labelValidIsbn.setForeground(new java.awt.Color(255, 0, 0));
+
+        labelValidationJudul.setForeground(new java.awt.Color(255, 0, 0));
+
+        labelTahunTerbit.setForeground(new java.awt.Color(255, 0, 0));
+
+        labelPenulis.setForeground(new java.awt.Color(255, 0, 0));
+
+        labelHargaSewa.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelValidIsbn)
+                    .addComponent(labelValidationJudul)
+                    .addComponent(labelTahunTerbit)
+                    .addComponent(labelPenulis)
+                    .addComponent(labelHargaSewa))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(labelValidIsbn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelValidationJudul)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelTahunTerbit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelPenulis)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelHargaSewa)
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,50 +159,83 @@ public class FormBuku extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnSubmit)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btnBack))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 22, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(85, 85, 85)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtJudul, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                                    .addComponent(comboJenisBuku, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(85, 85, 85)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelValidIsbn)
-                                    .addComponent(txtIsbn, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnBack)))
-                .addContainerGap(199, Short.MAX_VALUE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(85, 85, 85)
+                                            .addComponent(comboJenisBuku, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(0, 0, Short.MAX_VALUE)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(85, 85, 85)
+                                                    .addComponent(txtJudul, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(85, 85, 85)
+                                                    .addComponent(txtTahunTerbit, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(85, 85, 85)
+                                                    .addComponent(txtPenulis, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(85, 85, 85)
+                                                    .addComponent(txtHargaSewa, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(btnSubmit)
+                                                .addComponent(labelSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(85, 85, 85)
+                                        .addComponent(txtIsbn, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 193, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnBack)
-                .addGap(95, 95, 95)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtIsbn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(labelValidIsbn)
-                .addGap(21, 21, 21)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtJudul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(comboJenisBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtTahunTerbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtPenulis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtHargaSewa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(93, 93, 93)
                 .addComponent(btnSubmit)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelSubmit)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         pack();
@@ -133,16 +250,48 @@ public class FormBuku extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtIsbnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIsbnKeyReleased
-        if (Validation.isbnValidation(txtIsbn)) {
+        if (Validation.numberValidation(txtIsbn)) {
             labelValidIsbn.setText("");
         } else {
-            labelValidIsbn.setText("Hanya boleh angka dan lebih dari > 0 !");
+            labelValidIsbn.setText("ISBN Hanya boleh angka dan harus lebih dari > 0 !");
         }
     }//GEN-LAST:event_txtIsbnKeyReleased
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        // TODO add your handling code here:
+        labelSubmit.setText("Berhasil Input");
     }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void txtJudulKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtJudulKeyReleased
+        if (txtJudul.getText().isEmpty()) {
+            labelValidationJudul.setText("Inputan judul tidak boleh kosong");
+        } else  {
+            labelValidationJudul.setText("");
+        }
+    }//GEN-LAST:event_txtJudulKeyReleased
+
+    private void txtTahunTerbitKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTahunTerbitKeyReleased
+        if (Validation.numberValidation(txtTahunTerbit)) {
+            labelTahunTerbit.setText("");
+        } else {
+            labelTahunTerbit.setText("Tahun Terbit Hanya boleh angka dan harus lebih dari > 0 !");
+        }
+    }//GEN-LAST:event_txtTahunTerbitKeyReleased
+
+    private void txtHargaSewaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHargaSewaKeyReleased
+        if (Validation.numberValidation(txtHargaSewa)) {
+            labelHargaSewa.setText("");
+        } else {
+            labelHargaSewa.setText("Harga Sewa Hanya boleh angka dan harus lebih dari > 0 !");
+        }
+    }//GEN-LAST:event_txtHargaSewaKeyReleased
+
+    private void txtPenulisKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPenulisKeyReleased
+        if (txtPenulis.getText().isEmpty()) {
+            labelPenulis.setText("Inputan Penulis tidak boleh kosong");
+        } else  {
+            labelPenulis.setText("");
+        }
+    }//GEN-LAST:event_txtPenulisKeyReleased
 
     /**
      * @param args the command line arguments
@@ -186,8 +335,20 @@ public class FormBuku extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelHargaSewa;
+    private javax.swing.JLabel labelPenulis;
+    private javax.swing.JLabel labelSubmit;
+    private javax.swing.JLabel labelTahunTerbit;
     private javax.swing.JLabel labelValidIsbn;
+    private javax.swing.JLabel labelValidationJudul;
+    private javax.swing.JTextField txtHargaSewa;
     private javax.swing.JTextField txtIsbn;
     private javax.swing.JTextField txtJudul;
+    private javax.swing.JTextField txtPenulis;
+    private javax.swing.JTextField txtTahunTerbit;
     // End of variables declaration//GEN-END:variables
 }

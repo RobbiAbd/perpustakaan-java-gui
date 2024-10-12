@@ -12,11 +12,19 @@ public class Buku {
     private int isbn;
     private String judul;
     private String jenisBuku;
+    private int tahunTerbit;
+    private String penulis;
+    private String penerbit;
+    private int hargaSewa;
 
-    public Buku(int isbn, String judul, String jenisBuku) {
+    public Buku(int isbn, String judul, String jenisBuku, int tahunTerbit, String penulis, String penerbit, int hargaSewa) {
         this.isbn = isbn;
         this.judul = judul;
         this.jenisBuku = jenisBuku;
+        this.tahunTerbit = tahunTerbit;
+        this.penulis = penulis;
+        this.penerbit = penerbit;
+        this.hargaSewa = hargaSewa;
     }
 
     public int getIsbn() {
@@ -35,13 +43,44 @@ public class Buku {
         this.judul = judul;
     }
 
-    public String getTipeBuku() {
+    public String getJenisBuku() {
         return jenisBuku;
     }
 
-    public void setTipeBuku(String tipeBuku) {
-        this.jenisBuku = tipeBuku;
+    public void setJenisBuku(String jenisBuku) {
+        this.jenisBuku = jenisBuku;
     }
-    
-    
+
+    public int getTahunTerbit() {
+        return tahunTerbit;
+    }
+
+    public void setTahunTerbit(int tahunTerbit) {
+        this.tahunTerbit = tahunTerbit;
+    }
+
+    public String getPenulis() {
+        return penulis;
+    }
+
+    public void setPenulis(String penulis) {
+        this.penulis = penulis;
+    }
+
+    public String getPenerbit() {
+        return penerbit;
+    }
+
+    public void setPenerbit(String penerbit) {
+        this.penerbit = penerbit;
+    }
+
+    public int getHargaSewa() {
+        return hargaSewa;
+    }
+
+    public void setHargaSewa(int hargaSewa) {
+        this.hargaSewa = hargaSewa;
+    }
+
 }

@@ -11,7 +11,7 @@ import javax.swing.JTextField;
  * @author ROBBIABD
  */
 public class Validation {
-    public static boolean isbnValidation(JTextField text) {
+    public static boolean numberValidation(JTextField text) {
         try {
             int number = Integer.parseInt(text.getText());
             
