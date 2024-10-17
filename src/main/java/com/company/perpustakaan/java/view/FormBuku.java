@@ -12,11 +12,24 @@ import com.company.perpustakaan.java.helper.Validation;
  */
 public class FormBuku extends javax.swing.JFrame {
 
+    private boolean isShowBtnBack = true;
+    
     /**
      * Creates new form FormBuku
      */
     public FormBuku() {
         initComponents();
+        
+        btnBack.setVisible(isShowBtnBack);
+    }
+
+    public boolean isIsShowBtnBack() {
+        return isShowBtnBack;
+    }
+
+    public void setIsShowBtnBack(boolean isShowBtnBack) {
+        this.isShowBtnBack = isShowBtnBack;
+        btnBack.setVisible(this.isShowBtnBack);
     }
 
     /**
@@ -37,6 +50,21 @@ public class FormBuku extends javax.swing.JFrame {
         btnSubmit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         labelValidIsbn = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtTahunTerbit = new javax.swing.JTextField();
+        txtPenulis = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtPenerbit = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtHargaSewa = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        labelValidationTahunTerbit = new javax.swing.JLabel();
+        labelValidationPenulis = new javax.swing.JLabel();
+        labelValidationPenerbit = new javax.swing.JLabel();
+        labelValidationHargaSewa = new javax.swing.JLabel();
+        labelValidationJudul = new javax.swing.JLabel();
+        labelValidationJenisBuku = new javax.swing.JLabel();
+        labelStatusSubmit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,7 +80,7 @@ public class FormBuku extends javax.swing.JFrame {
 
         jLabel3.setText("Jenis Buku");
 
-        comboJenisBuku.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Komik", "Manga", "Novel" }));
+        comboJenisBuku.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "== PILIH ==", "Komik", "Manga", "Novel" }));
 
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -68,57 +96,126 @@ public class FormBuku extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Tahun Terbit");
+
+        txtTahunTerbit.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTahunTerbitKeyReleased(evt);
+            }
+        });
+
+        jLabel5.setText("Penulis");
+
+        jLabel6.setText("Penerbit");
+
+        txtHargaSewa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtHargaSewaKeyReleased(evt);
+            }
+        });
+
+        jLabel7.setText("Harga Sewa");
+
+        labelStatusSubmit.setText("Status Submit:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnSubmit)
-                            .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnSubmit)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(85, 85, 85)
+                                .addComponent(jLabel4))
+                            .addGap(85, 85, 85)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelValidationTahunTerbit)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtJudul, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                                    .addComponent(comboJenisBuku, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(85, 85, 85)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelValidIsbn)
-                                    .addComponent(txtIsbn, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtJudul)
+                                    .addComponent(comboJenisBuku, 0, 355, Short.MAX_VALUE)
+                                    .addComponent(txtTahunTerbit))
+                                .addComponent(txtPenulis, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelValidationPenulis)
+                                .addComponent(labelValidationJudul)
+                                .addComponent(labelValidationJenisBuku)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(85, 85, 85)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelValidIsbn)
+                                .addComponent(txtIsbn, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(btnBack)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnBack)))
-                .addContainerGap(199, Short.MAX_VALUE))
+                        .addGap(174, 174, 174)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPenerbit, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtHargaSewa, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelValidationPenerbit)
+                            .addComponent(labelValidationHargaSewa)))
+                    .addComponent(labelStatusSubmit))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnBack)
-                .addGap(95, 95, 95)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtIsbn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(5, 5, 5)
                 .addComponent(labelValidIsbn)
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtJudul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelValidationJudul)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(comboJenisBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelValidationJenisBuku)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtTahunTerbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addComponent(labelValidationTahunTerbit)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtPenulis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelValidationPenulis)
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtPenerbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelValidationPenerbit)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtHargaSewa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelValidationHargaSewa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
                 .addComponent(btnSubmit)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelStatusSubmit)
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -127,7 +224,7 @@ public class FormBuku extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         this.setVisible(false);
-        
+
         LandingPage landing = new LandingPage();
         landing.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
@@ -141,8 +238,30 @@ public class FormBuku extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIsbnKeyReleased
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        // TODO add your handling code here:
+        String jenisBuku = comboJenisBuku.getSelectedItem().toString();
+
+        if (txtIsbn.getText().isEmpty() || txtJudul.getText().isEmpty() || jenisBuku.equals("== PILIH ==") || txtTahunTerbit.getText().isEmpty() || txtPenulis.getText().isEmpty() || txtPenulis.getText().isEmpty() || txtHargaSewa.getText().isEmpty()) {
+            labelStatusSubmit.setText("Status Submit: failed");
+        } else {
+            labelStatusSubmit.setText("Status Submit: success");
+        }
     }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void txtTahunTerbitKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTahunTerbitKeyReleased
+        if (Validation.isbnValidation(txtTahunTerbit)) {
+            labelValidationTahunTerbit.setText("");
+        } else {
+            labelValidationTahunTerbit.setText("Hanya boleh angka dan lebih dari > 0 !");
+        }
+    }//GEN-LAST:event_txtTahunTerbitKeyReleased
+
+    private void txtHargaSewaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHargaSewaKeyReleased
+        if (Validation.isbnValidation(txtHargaSewa)) {
+            labelValidationHargaSewa.setText("");
+        } else {
+            labelValidationHargaSewa.setText("Hanya boleh angka dan lebih dari > 0 !");
+        }
+    }//GEN-LAST:event_txtHargaSewaKeyReleased
 
     /**
      * @param args the command line arguments
@@ -186,8 +305,23 @@ public class FormBuku extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel labelStatusSubmit;
     private javax.swing.JLabel labelValidIsbn;
+    private javax.swing.JLabel labelValidationHargaSewa;
+    private javax.swing.JLabel labelValidationJenisBuku;
+    private javax.swing.JLabel labelValidationJudul;
+    private javax.swing.JLabel labelValidationPenerbit;
+    private javax.swing.JLabel labelValidationPenulis;
+    private javax.swing.JLabel labelValidationTahunTerbit;
+    private javax.swing.JTextField txtHargaSewa;
     private javax.swing.JTextField txtIsbn;
     private javax.swing.JTextField txtJudul;
+    private javax.swing.JTextField txtPenerbit;
+    private javax.swing.JTextField txtPenulis;
+    private javax.swing.JTextField txtTahunTerbit;
     // End of variables declaration//GEN-END:variables
 }

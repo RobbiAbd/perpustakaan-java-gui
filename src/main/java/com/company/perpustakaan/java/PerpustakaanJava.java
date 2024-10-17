@@ -5,6 +5,7 @@
 package com.company.perpustakaan.java;
 
 import com.company.perpustakaan.java.view.LandingPage;
+import com.company.perpustakaan.java.view.LoginPage;
 
 /**
  *
@@ -13,8 +14,7 @@ import com.company.perpustakaan.java.view.LandingPage;
 public class PerpustakaanJava {
 
     public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(() -> {
-            new LandingPage().setVisible(true);
-        });
+        LoginPage login = new LoginPage();
+        login.setVisible(true);
     }
 }
